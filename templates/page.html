@@ -1,3 +1,13 @@
 {% extends "templates/page.html" %}
 
-{% block logo_image %}"{{ EXTRA_STATIC_URL_PREFIX }}logoWhite.png"{% endblock logo_image %}
+{% block logo %}
+<div class="container">
+  <div class="row">
+    <div id="logo-container">
+      <img id="logo" src={% block logo_image %}"/extra_static/logoWhite.png"{% endblock logo_image %} width="390px" />
+      <br>
+      <img src="{{static_url("logo.svg")}}" width="145px"  />
+    </div>
+  </div>
+</div>
+{% endblock logo %}
