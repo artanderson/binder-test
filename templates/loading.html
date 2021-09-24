@@ -6,7 +6,7 @@
   <p class="launching">Launching your Binder...</p>
 </div>
 <div>
-  <h3 class="text-center">Server Busy? try launching at <a id="binderLink" target="_blank" href="">MyBinder.org</a></h3>
+  <h3 class="text-center">Server Busy? try launching at <a id="binderLink" target="_blank" href="">mybinder.org</a></h3>
 </div>
 
 <div id="log-container" class="panel panel-default on-build hidden row">
@@ -45,9 +45,9 @@ loadingMain("{{provider_spec}}");
 <script>
 const urlPath = window.location.pathname;
 const binder = "https://mybinder.org";
-const queryString = window.location.search;
-const urlParams = URLSearchParams(queryString).get('urlpath');
+//const queryString = window.location.search;
+//const urlParams = URLSearchParams(queryString).get('urlpath');
     
-document.getElementById("binderLink").href = binder + urlPath + "?urlpath=" + urlParams;
+document.getElementById("binderLink").href = binder + urlPath + "?urlpath=";
 </script>
 {% endblock footer %}
