@@ -43,11 +43,11 @@ Your binder will open automatically when it is ready.
 loadingMain("{{provider_spec}}");
 </script>
 <script>
+const binder = "https://mybinder.org";    
 const urlPath = window.location.pathname;
-const binder = "https://mybinder.org";
-//const queryString = window.location.search;
-//const urlParams = URLSearchParams(queryString).get('urlpath');
+const urlParams = window.location.search;
+
     
-document.getElementById("binderLink").href = binder + urlPath + "?urlpath=";
+document.getElementById("binderLink").href = binder + urlPath + urlParams;
 </script>
 {% endblock footer %}
