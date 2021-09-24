@@ -1,6 +1,9 @@
 {% extends "templates/index.html" %}
 
 {% block main %}
+<div id="main" class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
   {% block header %}
   <div id="header" class="text-center">
     <h3>Explore Aerospike's Interactvice Tutorials</h3>
@@ -150,5 +153,7 @@
     
   </div>
   {% endblock how_it_works %}
-
+      </div>
+    </div>
+</div>
 {% endblock main %}
