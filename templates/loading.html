@@ -39,6 +39,9 @@ Your binder will open automatically when it is ready.
 {% endblock main %}
 
 {% block footer %}
+<script type="text/javascript">
+loadingMain("{{provider_spec}}");
+</script>
 <script>
 var urlPath = window.location.pathname;
 var binder = "https://mybinder.org";
