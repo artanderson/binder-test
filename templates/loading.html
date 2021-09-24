@@ -1,0 +1,51 @@
+{% extends "templates/loading.html" %}
+
+{% block main %}
+<div id="loader"></div>
+<div id="loader-text">
+  <p class="launching">Launching your Binder...</p>
+</div>
+<div id="loader-links">
+  <p class="text-center">Server Busy? try launching at<a id="binderLink" target="_blank" href="">MyBinder.org</a></p>
+</div>
+
+<div id="log-container" class="panel panel-default on-build hidden row">
+  <div id="toggle-logs" class="panel-heading">
+    Build logs
+    <button type="button" class="btn btn-link btn-xs pull-right toggle">show</button>
+    <a id="view-raw-logs" class="btn btn-link btn-xs pull-right" target="_blank">view raw</a>
+  </div>
+  <div class="panel-body hidden">
+    <div id="log"></div>
+  </div>
+</div>
+
+{% block preview %}
+{% if nbviewer_url %}
+<div class="preview container">
+<p class="preview-text text-center">
+Here's a non-interactive preview on
+<a target="_blank" href="https://nbviewer.jupyter.org">nbviewer</a>
+while we start a server for you.
+Your binder will open automatically when it is ready.
+</p>
+<div id="nbviewer-preview">
+  <iframe src="{{ nbviewer_url }}"></iframe>
+</div>
+</div>
+{% endif %}
+{% endblock preview %}
+
+{% endblock main %}
+
+{% block footer %}
+<script type="text/javascript">
+loadingMain("{{provider_spec}}");
+</script>
+<script>
+var urlPath = window.location.pathname;
+var binder = "https://mybinder.org";
+
+document.getElementById("binderLink").href = binder + urlPath;
+</script>
+{% endblock footer %}
