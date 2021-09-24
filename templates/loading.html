@@ -45,7 +45,8 @@ loadingMain("{{provider_spec}}");
 <script>
 var urlPath = window.location.pathname;
 var binder = "https://mybinder.org";
-var urlPara = window.location.href.searchParams.get('urlpath'),
+let urlPara = URLSearchParams(window.location.search).get('urlpath'),
+    
 document.getElementById("binderLink").href = binder + urlPath + "?urlpath=" + urlPara;
 </script>
 {% endblock footer %}
