@@ -6,8 +6,36 @@
     <div id="logo-container">
       <img id="logo" src={% block logo_image %}"/extra_static/logoWhite.png"{% endblock logo_image %} width="390px" />
       <br>
-      <img src="{{static_url("logo.svg")}}" width="145px"  />
+      <img src="{{static_url("logo.svg")}}" width="100px"  />
     </div>
   </div>
 </div>
 {% endblock logo %}
+
+{% block main %}
+  {% block header %}
+  <div id="header" class="text-center">
+    <h3>Explore Aerospike's Interactvice Tutorials</h3>
+    <div id="explanation">
+      <p>These Aerospike tutorials will help developers quickly learn and enjoy using Aerospike Database. They contain both:</p>
+      <ul><li>Concepts – Explanations of common database and Aerospike concepts.</li>
+        <li>Code – Functioning Aerospike API code snippets.</li></ul>
+    </div>
+  </div>
+  {% endblock header %}
+
+  {% block how_it_works %}
+  <div id="how-it-works">
+    
+  </div>
+  {% endblock how_it_works %}
+
+{% endblock main %}
+
+{% block footer %}
+<div class="container">
+  <div class="row text-center">
+    <h3>Questions?<br />head over to the <a href="https://developer.aerospike.com">Developer Hub</a>, and explore more information about getting started with Aerospike</h3>
+  </div>
+</div>
+{% endblock footer %}
